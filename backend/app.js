@@ -7,6 +7,7 @@ const app = express();
 
 
 // middlewares
+app.use(express.json());
 // use express router
 app.use(require('./router/index'));
 
