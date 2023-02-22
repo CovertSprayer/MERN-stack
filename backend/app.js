@@ -5,9 +5,10 @@ const db = require('./config/mongoose');
 
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send("Working Fine");
-});
+
+// middlewares
+// use express router
+app.use(require('./router/index'));
 
 app.listen(PORT, () => {
     console.log("Server is Up");
