@@ -46,13 +46,13 @@ router.post('/signin', async (req, res) => {
     const { email, password } = req.body;
     // console.log(req.body);
     if (!email || !password) {
-        return res.json({ error: "Invalid Details" });
+        return res.json({ error: "Plz fill the field data" });
     }
 
     const user = await User.findOne({ email: email }); // ek he user milega, find() -> array of user dega
     // console.log(typeof(user[0].password));
     if (!user) {
-        return res.json({ error: "User doesn't exist" });
+        return res.json({ error: "Invalid Details" });
     }
 
     const checkPass = await bcrypt.compare(password, user.password); // returns true or false
