@@ -56,7 +56,7 @@ body {
     user-select: none;
     /* text of the element cant be selected by the user */
     overflow-x: hidden;
-    color: var(--color-dark-variant);
+    color: var(--color-dark);
 
     .navbar {
         position: fixed;
@@ -69,6 +69,7 @@ body {
         gap: 2rem;
         align-items: center;
         padding: var(--padding-1);
+
 
         .navbar-brand {
             font-size: 1.4rem;
@@ -136,6 +137,7 @@ section{
                 font-size: 1rem;
             }
             input{
+                width: 100%;
                 background: transparent;
             }
         }
@@ -177,3 +179,24 @@ section{
     }
 }
 
+
+.home-page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, #EAF0FC 50%, white 50%);
+
+
+
+    .home-div{
+        text-align: center;
+        p{
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-btn);
+            padding: 0.5rem
+        }
+    }
+}
