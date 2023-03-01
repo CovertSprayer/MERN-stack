@@ -49,7 +49,7 @@ router.post('/signin',async (req, res) => {
     const { email, password } = req.body;
 
     if (!email || !password) {
-        return res.json({ error: "Plz fill the field data" });
+        return res.status(406).json({ error: "Plz fill the field data" });
     }
 
     const user = await User.findOne({ email: email }); // ek he user milega, find() -> array of user dega

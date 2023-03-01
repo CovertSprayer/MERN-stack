@@ -29,6 +29,9 @@ const Login = () => {
     if(res.status === 400){
       window.alert('Invalid Credentials');
     }
+    else if(res.status === 406){
+      window.alert('Plz fill the field data');
+    }
     else{
       window.alert('Sign in successfully');
       history.push('/');
