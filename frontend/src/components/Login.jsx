@@ -1,8 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom';
 import pic1 from '../images/pic2.png';
 
 
 const Login = () => {
+  const history = useHistory();
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const sendData = async (e) => {
+    e.preventDefault();
+
+    const res = await fetch('/signin', {
+      method:'POST',
+      headers:{
+        'Content-type':'application/json'
+      },
+      body: JSON.stringify({
+        email,
+        password
+      })
+    });
+
+    const data = await res.json();
+    console.log(data);
+
+    if(res.status === 400){
+      window.alert('Invalid Credentials');
+    }
+    else{
+      window.alert('Sign in successfully');
+      history.push('/');
+    }
+  }
+
   return (
     <section>
       <div className='main-container'>
@@ -16,18 +48,18 @@ const Login = () => {
         <div className="right-container">
           <div className='centered'>
             <h2 className='form-title'>Log In</h2>
-            <form>
+            <form method='POST'>
               <div className="input-box">
               <span class="material-symbols-outlined">mail</span>
-                <input type="email" placeholder='Your Email'/>
+                <input onChange={e => setEmail(e.target.value)} type="email" placeholder='Your Email'/>
               </div>
 
               <div className="input-box">
                 <span class="material-symbols-outlined">lock</span>
-                <input type="password" placeholder='Password'/>
+                <input onChange={e => setPassword(e.target.value)} type="password" placeholder='Password'/>
               </div>
 
-              <button className='btn' type="submit">Log in</button>
+              <button onClick={sendData} className='btn' type="submit">Log in</button>
 
             </form>
           </div>
