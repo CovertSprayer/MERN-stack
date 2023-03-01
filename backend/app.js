@@ -12,5 +12,5 @@ app.use(express.json());
 app.use(require('./router/index'));
 
 app.listen(PORT, () => {
-    console.log("Server is Up");
+    console.log("Server is Up on PORT", PORT);
 })

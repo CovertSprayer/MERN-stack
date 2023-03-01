@@ -24,7 +24,7 @@ router.post('/register', async (req, res) => {
         console.log(userExist);
 
         if (userExist) {
-            return res.status(422).json({ error: "Email already exist" });
+            return res.status(409).json({ error: "Email already exist" });
         }
         else if (password != cpassword) {
             return res.status(422).json({ error: "Passoword not matching" });

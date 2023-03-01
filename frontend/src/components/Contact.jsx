@@ -6,21 +6,21 @@ const Contact = () => {
       <div className="outer">
         <div className="row">
           <div className="detail-card">
-            <span class="material-symbols-outlined">phone</span>
+            <span className="material-symbols-outlined">phone</span>
             <div className="details">
               <h4>Phone</h4>
               <small>+91 9922332939</small>
             </div>
           </div>
           <div className="detail-card">
-            <span class="material-symbols-outlined">mail</span>
+            <span className="material-symbols-outlined">mail</span>
             <div className="details">
               <h4>Email</h4>
               <small>abcdef1134@xyx.com</small>
             </div>
           </div>
           <div className="detail-card">
-            <span class="material-symbols-outlined">map</span>
+            <span className="material-symbols-outlined">map</span>
             <div className="details">
               <h4>Address</h4>
               <small>Delhi, India</small>
